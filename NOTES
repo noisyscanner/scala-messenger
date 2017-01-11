@@ -1,0 +1,14 @@
+Create functional methods for:
+
+server.listen((clientSocket) => {...}) // callback called when a new client connects
+server.
+
+
+
+Server creates a thread:
+  On this thread, the blocking function accept() is called
+  When this returns, it calls a callback passing the Socket instance
+
+  The socket then creates another thread:
+    This thread loops infinitely...
+    When there is input, it reads each line and calls a callback
